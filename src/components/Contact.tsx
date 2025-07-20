@@ -52,19 +52,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@yourname.dev",
-      href: "mailto:hello@yourname.dev"
+      value: "singh.kaivalya@gmail.com",
+      href: "mailto:singh.kaivalya@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "408-890-9234",
+      href: "tel:4088909234"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Your City, State",
+      value: "California, USA",
       href: null
     }
   ];
@@ -143,11 +143,13 @@ const Contact = () => {
                       className="w-full px-3 py-2 bg-muted/50 border border-border rounded-md focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary text-foreground"
                     >
                       <option value="">Select budget range</option>
-                      <option value="under-5k">Under $5,000</option>
-                      <option value="5k-10k">$5,000 - $10,000</option>
-                      <option value="10k-25k">$10,000 - $25,000</option>
-                      <option value="25k-plus">$25,000+</option>
+                      <option value="under-500">Under $500</option>
+                      <option value="500-1000">$500 - $1,000</option>
+                      <option value="1000-plus">$1,000+</option>
                     </select>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      💡 Pricing is very flexible - let's discuss your needs!
+                    </p>
                   </div>
                 </div>
 

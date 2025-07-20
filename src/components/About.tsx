@@ -45,7 +45,7 @@ const strengths = [
 
 const About = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -53,8 +53,8 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate web developer with 3+ years of experience creating digital solutions 
-            that make a difference. I combine technical expertise with creative thinking to 
+            Passionate young developer who started coding in middle school and is currently 
+            a sophomore in high school. I combine technical expertise with creative thinking to 
             deliver exceptional user experiences.
           </p>
         </div>
@@ -66,19 +66,18 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-foreground">My Journey</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I started my journey in web development during college, fascinated by the intersection 
+                  I started my journey in web development during middle school, fascinated by the intersection 
                   of creativity and technology. What began as curiosity quickly grew into a passion for 
                   building digital experiences that solve real problems.
                 </p>
                 <p>
-                  Over the years, I've had the privilege of working with startups, local businesses, 
-                  and established companies, helping them establish their digital presence and grow 
-                  their online reach. Each project has taught me something new and shaped my approach 
-                  to development.
+                  Currently a sophomore in high school, I've already had the privilege of working on various 
+                  projects, helping businesses establish their digital presence. Each project has taught me 
+                  something new and shaped my approach to development at such a young age.
                 </p>
                 <p>
-                  When I'm not coding, you can find me exploring new technologies, contributing to 
-                  open-source projects, or sharing my knowledge through blog posts and tutorials.
+                  When I'm not coding, you can find me exploring new technologies, working on personal projects, 
+                  or balancing my studies while continuing to grow my development skills.
                 </p>
               </div>
             </div>
