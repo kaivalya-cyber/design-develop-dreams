@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Professional Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Professional Dark Theme */
+    --background: 210 25% 8%;
+    --foreground: 213 31% 91%;
+    
+    --card: 210 25% 11%;
+    --card-foreground: 213 31% 91%;
+    
+    --popover: 210 25% 11%;
+    --popover-foreground: 213 31% 91%;
+    
+    /* Vibrant Accent System */
+    --primary: 200 100% 50%;
+    --primary-foreground: 210 25% 8%;
+    --primary-glow: 200 100% 65%;
+    
+    --secondary: 210 25% 16%;
+    --secondary-foreground: 213 31% 91%;
+    
+    --muted: 210 25% 16%;
+    --muted-foreground: 213 15% 70%;
+    
+    --accent: 200 100% 50%;
+    --accent-foreground: 210 25% 8%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
+    
+    --border: 210 25% 20%;
+    --input: 210 25% 16%;
+    --ring: 200 100% 50%;
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 50%), hsl(220 100% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(210 25% 11%), hsl(210 25% 14%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 25% 8%) 0%, hsl(220 30% 12%) 50%, hsl(200 40% 15%) 100%);
+    
+    /* Professional Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(210 25% 4% / 0.3);
+    --shadow-glow: 0 0 40px hsl(200 100% 50% / 0.15);
+    --shadow-card: 0 8px 32px -8px hsl(210 25% 4% / 0.4);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +115,77 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  /* Professional Button Variants */
+  .btn-primary-glow {
+    @apply bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] transition-all duration-300;
+  }
+  
+  /* Project Card Hover Effects */
+  .project-card {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_40px_-12px_hsl(var(--primary)/0.2)];
+  }
+  
+  /* Smooth Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Gradient Text Effect */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Custom Shadow Utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
