@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,69 +7,57 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
+    title: "Modern Restaurant Website",
+    description: "A sleek, responsive restaurant website featuring online ordering, interactive menu, reservation system, and location mapping. Built with modern design principles and optimized for mobile devices.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Stripe API"],
+    liveUrl: "#",
+    githubUrl: "#",
     featured: true
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-    technologies: ["React", "TypeScript", "Socket.io", "Express", "PostgreSQL"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
+    title: "E-Learning Platform Dashboard",
+    description: "A comprehensive learning management system with course tracking, progress analytics, interactive quizzes, and student-teacher communication. Features real-time updates and beautiful data visualization.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+    technologies: ["Next.js", "Node.js", "PostgreSQL", "Chart.js", "Socket.io"],
+    liveUrl: "#",
+    githubUrl: "#",
     featured: true
   },
   {
     id: 3,
-    title: "Restaurant Website",
-    description: "A modern restaurant website with online ordering, reservation system, and dynamic menu management for a local business.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-    technologies: ["Next.js", "Prisma", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Portfolio Dashboard",
-    description: "An analytics dashboard for tracking portfolio performance with data visualization and real-time market data integration.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    technologies: ["Vue.js", "Chart.js", "Firebase", "CSS Grid"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project",
+    title: "Real Estate Property Portal",
+    description: "A dynamic property listing platform with advanced search filters, virtual tours, mortgage calculator, and agent contact system. Includes map integration and favorites functionality.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    technologies: ["React", "Express.js", "MongoDB", "Google Maps API", "AWS S3"],
+    liveUrl: "#",
+    githubUrl: "#",
     featured: false
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-secondary/20">
+    <section id="projects" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
+            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work, demonstrating expertise in modern web technologies 
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Showcasing modern web applications built with cutting-edge technologies 
             and user-centered design principles.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className={`project-card card-gradient border-border/50 overflow-hidden group ${
-                project.featured ? 'lg:row-span-1' : ''
-              }`}
+              className="group bg-white shadow-xl border-0 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
@@ -76,44 +65,42 @@ const Projects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 {/* Overlay Links */}
-                <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <a
                     href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-background/90 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                    className="p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-blue-500 hover:text-white transition-colors duration-200 shadow-lg"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <a
                     href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-background/90 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                    className="p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-gray-800 hover:text-white transition-colors duration-200 shadow-lg"
                   >
                     <Github className="w-4 h-4" />
                   </a>
                 </div>
                 
                 {project.featured && (
-                  <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                  <Badge className="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0 shadow-lg">
                     Featured
                   </Badge>
                 )}
               </div>
               
               {/* Project Content */}
-              <CardHeader>
-                <CardTitle className="text-xl text-foreground">{project.title}</CardTitle>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
+                  {project.title}
+                </CardTitle>
               </CardHeader>
               
               <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm">
                   {project.description}
                 </p>
                 
@@ -123,7 +110,7 @@ const Projects = () => {
                     <Badge 
                       key={tech} 
                       variant="secondary" 
-                      className="text-xs bg-muted/50 text-muted-foreground border-0"
+                      className="text-xs bg-slate-100 text-slate-700 border-0 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200"
                     >
                       {tech}
                     </Badge>
@@ -135,9 +122,9 @@ const Projects = () => {
                   <Button
                     asChild
                     size="sm"
-                    className="bg-primary hover:bg-primary-glow text-primary-foreground"
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={project.liveUrl}>
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
                     </a>
@@ -146,9 +133,9 @@ const Projects = () => {
                     asChild
                     variant="outline"
                     size="sm"
-                    className="border-border hover:border-primary"
+                    className="border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-slate-700 hover:text-blue-600 transition-all duration-300"
                   >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={project.githubUrl}>
                       <Github className="w-4 h-4 mr-2" />
                       Code
                     </a>
@@ -164,7 +151,7 @@ const Projects = () => {
           <Button 
             variant="outline"
             size="lg"
-            className="border-primary/50 hover:border-primary hover:bg-primary/10 text-lg px-8"
+            className="border-blue-500/50 hover:border-blue-500 hover:bg-blue-50 text-blue-600 hover:text-blue-700 text-lg px-8 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             View All Projects
           </Button>
