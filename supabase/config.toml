@@ -1,1 +1,4 @@
 project_id = "zbcuryjsjkaosxwxrbmf"
+
+[functions.ai-chat]
+verify_jwt = false
