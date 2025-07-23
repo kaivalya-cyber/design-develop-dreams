@@ -11,7 +11,7 @@ const projects = [
     description: "A sleek, responsive restaurant website featuring online ordering, interactive menu, reservation system, and location mapping. Built with modern design principles and optimized for mobile devices.",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Stripe API"],
-    liveUrl: "#",
+    liveUrl: "https://dine-smooth-app.lovable.app",
     githubUrl: "#",
     featured: true
   },
