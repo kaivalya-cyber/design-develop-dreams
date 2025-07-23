@@ -59,13 +59,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "408-890-9234",
-      href: "tel:4088909234"
+      value: "+1 (408) 890-9234",
+      href: "tel:+14088909234"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "California, USA",
+      value: "San Jose, CA",
       href: null
     }
   ];
