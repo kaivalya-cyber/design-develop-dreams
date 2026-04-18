@@ -32,13 +32,54 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-up">
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold">
-              <span className="gradient-text">Kaivalya Singh</span>
-            </h1>
+            <h1 className="sr-only">Kaivalya Singh</h1>
+            <svg
+              viewBox="0 0 900 220"
+              className="w-full max-w-[720px] mx-auto h-auto"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="heroNameGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" />
+                  <stop offset="100%" stopColor="hsl(var(--primary-glow))" />
+                </linearGradient>
+              </defs>
+              <text
+                x="50%"
+                y="55%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontFamily="'Brush Script MT', 'Snell Roundhand', 'Segoe Script', cursive"
+                fontSize="140"
+                fontStyle="italic"
+                fontWeight="500"
+                stroke="url(#heroNameGradient)"
+                strokeWidth="2"
+                fill="transparent"
+                className="hero-handwriting"
+              >
+                Kaivalya Singh
+              </text>
+            </svg>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-light">
               Quantum Computing • Reinforcement Learning • Computer Vision
             </h2>
           </div>
+          <style>{`
+            .hero-handwriting {
+              stroke-dasharray: 2400;
+              stroke-dashoffset: 2400;
+              animation: heroDrawName 3s ease-in-out forwards, heroFillName 0.8s ease-in 2.8s forwards;
+            }
+            @keyframes heroDrawName {
+              to { stroke-dashoffset: 0; }
+            }
+            @keyframes heroFillName {
+              to { fill: hsl(var(--primary-glow)); }
+            }
+          `}</style>
           
           {/* Tagline */}
           <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed">
