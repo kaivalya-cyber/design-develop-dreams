@@ -1,160 +1,275 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+};
+
+type Category = {
+  name: string;
+  projects: Project[];
+};
+
+const categories: Category[] = [
   {
-    id: 1,
-    title: "Modern Restaurant Website",
-    description: "A sleek, responsive restaurant website featuring online ordering, interactive menu, reservation system, and location mapping. Built with modern design principles and optimized for mobile devices.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Stripe API"],
-    liveUrl: "https://dine-smooth-app.lovable.app",
-    githubUrl: "#",
-    featured: true
+    name: "Quantum Computing",
+    projects: [
+      {
+        title: "Adaptive Variational QEC Decoder",
+        description:
+          "Real-time noise classification using a CNN that routes syndrome data to specialized variational quantum decoders optimized per noise type. 18.4% avg logical error rate improvement, 27.2% peak, 94.2% classifier accuracy, 3.8% overhead.",
+        technologies: ["PennyLane", "PyTorch", "stim", "pymatching"],
+        githubUrl: "https://github.com/kaivalya-cyber/variational-qec-decoder",
+      },
+    ],
   },
   {
-    id: 2,
-    title: "E-Learning Platform Dashboard",
-    description: "A comprehensive learning management system with course tracking, progress analytics, interactive quizzes, and student-teacher communication. Features real-time updates and beautiful data visualization.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Chart.js", "Socket.io"],
-    liveUrl: "https://learn-zen-dash.lovable.app",
-    githubUrl: "#",
-    featured: true
+    name: "Multi-Agent Reinforcement Learning",
+    projects: [
+      {
+        title: "MAPPO Drone Swarm",
+        description:
+          "Cooperative-competitive drone swarm using CTDE architecture. Two teams of three drones with emergent role specialization.",
+        technologies: ["PyTorch", "PyBullet", "Gymnasium"],
+        githubUrl: "https://github.com/kaivalya-cyber/drone_swarm_marl",
+      },
+      {
+        title: "Opponent Modeling MARL",
+        description:
+          "1v1 predator-prey with GRU-based opponent modeling and PPO baseline. Full pytest suite, 23 tests passing.",
+        technologies: ["PyTorch", "Stable-Baselines3", "Gymnasium"],
+        githubUrl: "https://github.com/kaivalya-cyber/deeptrack-control-nn-policy",
+      },
+    ],
   },
   {
-    id: 3,
-    title: "Real Estate Property Portal",
-    description: "A dynamic property listing platform with advanced search filters, virtual tours, mortgage calculator, and agent contact system. Includes map integration and favorites functionality.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-    technologies: ["React", "Express.js", "MongoDB", "Google Maps API", "AWS S3"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false
-  }
+    name: "Reinforcement Learning",
+    projects: [
+      {
+        title: "Drone Visual Tracking",
+        description:
+          "YOLOv8 + SAC agent with MAVSDK/PX4 integration, deployed on real drone hardware.",
+        technologies: ["YOLOv8", "PyTorch", "Flightmare", "MAVSDK"],
+        githubUrl: "https://github.com/kaivalya-cyber/drone_rl",
+      },
+      {
+        title: "Drone Windy Navigation PPO",
+        description:
+          "PPO agent trained with wind curriculum in PyBullet for robustness.",
+        technologies: ["PyBullet", "Gymnasium", "Stable-Baselines3"],
+        githubUrl: "https://github.com/kaivalya-cyber/tracking_rl",
+      },
+      {
+        title: "RL Car PPO",
+        description:
+          "Custom 2D physics environment with curriculum difficulty and vectorized envs.",
+        technologies: ["PyTorch", "Gymnasium"],
+        githubUrl: "https://github.com/kaivalya-cyber/car_neural_diff_learning",
+      },
+      {
+        title: "MuJoCo Car RL",
+        description:
+          "Goal-reaching agent with hyperparameter sweeps and checkpoint saving.",
+        technologies: ["MuJoCo", "Stable-Baselines3"],
+        githubUrl: "https://github.com/kaivalya-cyber/RL-Mujoco-Learning-",
+      },
+      {
+        title: "RL Triple Inverted Pendulum",
+        description:
+          "Nonlinear control via deep Q-learning and policy gradient.",
+        technologies: ["PyTorch", "Gymnasium"],
+      },
+      {
+        title: "ML Drone Racing",
+        description:
+          "RL agents for autonomous flight in simulation.",
+        technologies: ["PyTorch", "Flightmare"],
+      },
+    ],
+  },
+  {
+    name: "Computer Vision & Robotics",
+    projects: [
+      {
+        title: "Swim Vision",
+        description:
+          "AI-powered biomechanical swim stroke analysis.",
+        technologies: ["Python", "Computer Vision"],
+        githubUrl: "https://github.com/kaivalya-cyber/Swim-Vision",
+      },
+      {
+        title: "SignalDrive",
+        description:
+          "Gesture-controlled car simulation with hand tracking, real-time physics, PID-smoothed steering, and F1-style telemetry HUD.",
+        technologies: ["MediaPipe", "PyBullet", "Python"],
+        githubUrl: "https://github.com/kaivalya-cyber/SignalDrive",
+      },
+      {
+        title: "Self-Balancing Two-Wheel Robot",
+        description:
+          "PID controller with state estimation for real hardware balancing.",
+        technologies: ["PID", "Embedded", "Control Systems"],
+      },
+    ],
+  },
+  {
+    name: "Systems & Infrastructure",
+    projects: [
+      {
+        title: "GPU Parallelization Benchmarking",
+        description:
+          "CPU vs GPU performance benchmarking suite using NVIDIA CUDA.",
+        technologies: ["CUDA", "C++", "Python"],
+      },
+      {
+        title: "OpenJarvis",
+        description:
+          "Local voice AI on MacBook Air M4 using MLX, Qwen2.5-7B-4bit, Whisper, and Kokoro TTS.",
+        technologies: ["MLX", "Qwen2.5", "Whisper", "Kokoro TTS"],
+      },
+    ],
+  },
+  {
+    name: "Web & Platform",
+    projects: [
+      {
+        title: "Vantage Point Learning",
+        description:
+          "STEM nonprofit platform with real-time volunteer feed, atomic claim logic, Google OAuth via PKCE.",
+        technologies: ["React", "Supabase", "shadcn/ui"],
+        githubUrl: "https://github.com/kaivalya-cyber/vantage-point-learning",
+        liveUrl: "https://vantage-point-learning.lovable.app",
+      },
+    ],
+  },
+  {
+    name: "Creative & Math",
+    projects: [
+      {
+        title: "Fractal Dynamics Simulator",
+        description:
+          "Julia, Multibrot, and L-system fractal layers with energy field interference patterns, stability heatmap, and real-time animation.",
+        technologies: ["Java"],
+        githubUrl: "https://github.com/kaivalya-cyber/fractal_java",
+      },
+    ],
+  },
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
-            Featured <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Showcasing modern web applications built with cutting-edge technologies 
-            and user-centered design principles.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A complete portfolio across quantum computing, RL, robotics, systems, and the web.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
-          {projects.map((project, index) => (
-            <Card 
-              key={project.id} 
-              className="group bg-white shadow-xl border-0 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Project Image */}
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Overlay Links */}
-                <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <a
-                    href={project.liveUrl}
-                    className="p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-blue-500 hover:text-white transition-colors duration-200 shadow-lg"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-gray-800 hover:text-white transition-colors duration-200 shadow-lg"
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
-                </div>
-                
-                {project.featured && (
-                  <Badge className="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0 shadow-lg">
-                    Featured
-                  </Badge>
-                )}
+        {/* Categories */}
+        <div className="space-y-16">
+          {categories.map((category) => (
+            <div key={category.name}>
+              <div className="mb-8 flex items-center gap-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  {category.name}
+                </h3>
+                <div className="flex-1 h-px bg-gradient-to-r from-primary/50 via-accent/30 to-transparent" />
+                <Badge
+                  variant="secondary"
+                  className="bg-muted text-muted-foreground border-0"
+                >
+                  {category.projects.length}
+                </Badge>
               </div>
-              
-              {/* Project Content */}
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl text-slate-800 group-hover:text-blue-600 transition-colors duration-300">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <p className="text-slate-600 leading-relaxed text-sm">
-                  {project.description}
-                </p>
-                
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <Badge 
-                      key={tech} 
-                      variant="secondary" 
-                      className="text-xs bg-slate-100 text-slate-700 border-0 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-200"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                
-                {/* Action Buttons */}
-                <div className="flex space-x-3 pt-2">
-                  <Button
-                    asChild
-                    size="sm"
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <a href={project.liveUrl}>
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="border-slate-300 hover:border-blue-500 hover:bg-blue-50 text-slate-700 hover:text-blue-600 transition-all duration-300"
-                  >
-                    <a href={project.githubUrl}>
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
 
-        {/* View More Button */}
-        <div className="text-center">
-          <Button 
-            variant="outline"
-            size="lg"
-            className="border-blue-500/50 hover:border-blue-500 hover:bg-blue-50 text-blue-600 hover:text-blue-700 text-lg px-8 shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            View All Projects
-          </Button>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {category.projects.map((project) => (
+                  <Card
+                    key={project.title}
+                    className="group bg-card border-border/50 overflow-hidden hover:shadow-[var(--shadow-glow)] hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                  >
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </CardTitle>
+                    </CardHeader>
+
+                    <CardContent className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed text-sm">
+                        {project.description}
+                      </p>
+
+                      {/* Technologies */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="text-xs bg-muted text-muted-foreground border-0 hover:bg-primary/20 hover:text-primary transition-colors duration-200"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      {/* Action Buttons */}
+                      {(project.githubUrl || project.liveUrl) && (
+                        <div className="flex flex-wrap gap-3 pt-2">
+                          {project.liveUrl && (
+                            <Button
+                              asChild
+                              size="sm"
+                              className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                            >
+                              <a
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                Live
+                              </a>
+                            </Button>
+                          )}
+                          {project.githubUrl && (
+                            <Button
+                              asChild
+                              variant="outline"
+                              size="sm"
+                              className="border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300"
+                            >
+                              <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="w-4 h-4 mr-2" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
