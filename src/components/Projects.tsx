@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Linkedin } from "lucide-react";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/kaivalya-singh-732190374/";
 
 type Project = {
   title: string;
