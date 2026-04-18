@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Mail } from "lucide-react";
+import { ArrowDown, Github, Mail, Linkedin } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -36,14 +36,14 @@ const Hero = () => {
               <span className="gradient-text">Kaivalya Singh</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-light">
-              Full-Stack Web Developer & UI/UX Designer
+              Quantum Computing • Reinforcement Learning • Computer Vision
             </h2>
           </div>
           
           {/* Tagline */}
           <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            I create beautiful, functional websites that drive results. 
-            Let's turn your vision into a digital reality that engages users and grows your business.
+            Sophomore building research-grade ML systems — from MARL drone swarms to a
+            variational quantum error correction decoder. I don't just learn technology, I build with it.
           </p>
           
           {/* CTA Buttons */}
@@ -69,15 +69,26 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 pt-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/kaivalya-cyber" 
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
             >
               <Github className="w-6 h-6" />
             </a>
             <a 
+              href="https://www.linkedin.com/in/kaivalya-singh-732190374/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a 
               href="mailto:singh.kaivalya@gmail.com"
+              aria-label="Email"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
             >
               <Mail className="w-6 h-6" />

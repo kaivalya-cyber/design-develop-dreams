@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { Mail, Phone, MapPin, Send, User, Building } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, Building, Linkedin, Github } from 'lucide-react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -81,6 +81,18 @@ const ContactForm = () => {
       label: "Location",
       value: "San Jose, CA",
       href: null
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "linkedin.com/in/kaivalya-singh",
+      href: "https://www.linkedin.com/in/kaivalya-singh-732190374/"
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      value: "github.com/kaivalya-cyber",
+      href: "https://github.com/kaivalya-cyber"
     }
   ];
 
@@ -199,7 +211,13 @@ const ContactForm = () => {
                   );
 
                   return item.href ? (
-                    <a key={index} href={item.href} className="block">
+                    <a
+                      key={index}
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block"
+                    >
                       {content}
                     </a>
                   ) : (
