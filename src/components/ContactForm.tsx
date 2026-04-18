@@ -211,7 +211,13 @@ const ContactForm = () => {
                   );
 
                   return item.href ? (
-                    <a key={index} href={item.href} className="block">
+                    <a
+                      key={index}
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block"
+                    >
                       {content}
                     </a>
                   ) : (
