@@ -69,15 +69,26 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 pt-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/kaivalya-cyber" 
               target="_blank" 
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
             >
               <Github className="w-6 h-6" />
             </a>
             <a 
+              href="https://www.linkedin.com/in/kaivalya-singh-732190374/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a 
               href="mailto:singh.kaivalya@gmail.com"
+              aria-label="Email"
               className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
             >
               <Mail className="w-6 h-6" />
