@@ -36,14 +36,14 @@ const Hero = () => {
               <span className="gradient-text">Kaivalya Singh</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-light">
-              Full-Stack Web Developer & UI/UX Designer
+              Quantum Computing • Reinforcement Learning • Computer Vision
             </h2>
           </div>
           
           {/* Tagline */}
           <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            I create beautiful, functional websites that drive results. 
-            Let's turn your vision into a digital reality that engages users and grows your business.
+            Sophomore building research-grade ML systems — from MARL drone swarms to a
+            variational quantum error correction decoder. I don't just learn technology, I build with it.
           </p>
           
           {/* CTA Buttons */}
