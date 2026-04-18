@@ -1,46 +1,83 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Palette, Database, Smartphone, Users, Lightbulb } from "lucide-react";
+import {
+  Code,
+  Database,
+  Users,
+  BrainCircuit,
+  Trophy,
+  Atom,
+  Boxes,
+  Wrench,
+  Linkedin,
+} from "lucide-react";
 
 const skills = [
   {
+    category: "ML & RL",
+    icon: BrainCircuit,
+    technologies: [
+      "PyTorch",
+      "Stable-Baselines3",
+      "Gymnasium",
+      "PennyLane",
+      "OpenCV",
+      "YOLOv8",
+      "MediaPipe",
+    ],
+  },
+  {
+    category: "Quantum",
+    icon: Atom,
+    technologies: ["PennyLane", "stim", "pymatching", "Rigetti/pyQuil"],
+  },
+  {
+    category: "Simulation",
+    icon: Boxes,
+    technologies: ["PyBullet", "MuJoCo", "Flightmare", "MAVSDK/PX4"],
+  },
+  {
     category: "Frontend",
     icon: Code,
-    technologies: ["React", "TypeScript", "Next.js", "Vue.js", "Tailwind CSS", "SASS"]
+    technologies: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Vite"],
   },
   {
     category: "Backend",
     icon: Database,
-    technologies: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "Firebase"]
+    technologies: ["Supabase", "Node.js", "Python", "Firebase"],
   },
   {
-    category: "Design",
-    icon: Palette,
-    technologies: ["Figma", "Adobe XD", "UI/UX Design", "Responsive Design", "Prototyping"]
+    category: "Tools",
+    icon: Wrench,
+    technologies: ["Git", "CUDA", "tmux", "conda", "pytest"],
   },
-  {
-    category: "Mobile",
-    icon: Smartphone,
-    technologies: ["React Native", "Progressive Web Apps", "Mobile-First Design"]
-  }
 ];
 
 const strengths = [
   {
-    icon: Lightbulb,
-    title: "Problem Solving",
-    description: "I love tackling complex challenges and finding elegant solutions that work for both users and businesses."
+    icon: BrainCircuit,
+    title: "Research-Grade Execution",
+    description:
+      "I don't just prototype. My projects have real results: 18.4% LER improvement on QEC, 23 passing tests on MARL systems, real drone deployment.",
   },
   {
     icon: Users,
-    title: "Client Communication",
-    description: "Clear communication throughout the project lifecycle ensures we're always aligned on goals and expectations."
+    title: "Community Impact",
+    description:
+      "Founded a nonprofit reaching 400+ students, 200+ hours tutoring, 100+ hours at Second Harvest Food Bank.",
   },
   {
     icon: Code,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code that follows best practices and industry standards."
-  }
+    title: "Full-Stack ML",
+    description:
+      "PyTorch, PennyLane, Gymnasium, PyBullet, OpenCV, YOLOv8, React, Supabase — I move between research and production.",
+  },
+  {
+    icon: Trophy,
+    title: "Competitive Edge",
+    description:
+      "1st Place SF Hackathon, Silver Medal Cove Hackathon, FTC Dean's List Finalist, NHS, 3.85 UW / 4.6 W GPA.",
+  },
 ];
 
 const About = () => {
@@ -53,10 +90,23 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate young developer who started coding in middle school and is currently 
-            a sophomore in high school. I combine technical expertise with creative thinking to 
-            deliver exceptional user experiences.
+            Sophomore at Evergreen Valley High School building at the intersection of quantum
+            computing, reinforcement learning, and computer vision. I've shipped real projects —
+            from MARL drone swarms to a variational quantum error correction decoder with a
+            published research paper — while founding a STEM nonprofit serving 400+ students across
+            five schools. I don't just learn technology, I build with it.
           </p>
+          <div className="mt-6 flex justify-center">
+            <a
+              href="https://www.linkedin.com/in/kaivalya-singh-732190374/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 hover-scale"
+            >
+              <Linkedin className="w-4 h-4" />
+              <span className="text-sm font-medium">Connect on LinkedIn</span>
+            </a>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -66,18 +116,23 @@ const About = () => {
               <h3 className="text-2xl font-semibold text-foreground">My Journey</h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I started my journey in web development during middle school, fascinated by the intersection 
-                  of creativity and technology. What began as curiosity quickly grew into a passion for 
-                  building digital experiences that solve real problems.
+                  I started coding in middle school, but things got serious when I began competing
+                  in FTC Robotics. Captaining Team Qbit 23642 as a Dean's List Finalist taught me
+                  how to build systems under pressure — hardware, software, and strategy all at
+                  once.
                 </p>
                 <p>
-                  Currently a sophomore in high school, I've already had the privilege of working on various 
-                  projects, helping businesses establish their digital presence. Each project has taught me 
-                  something new and shaped my approach to development at such a young age.
+                  From there I went deep into machine learning and reinforcement learning,
+                  completing college-level CS courses at Evergreen Valley College and earning
+                  certifications from MIT BWSI in Quantum Software and Python. I've built RL agents
+                  that run on real drones, MARL systems with emergent behavior, and a variational
+                  quantum error correction decoder that I co-authored into a research paper
+                  currently being submitted to arXiv.
                 </p>
                 <p>
-                  When I'm not coding, you can find me exploring new technologies, working on personal projects, 
-                  or balancing my studies while continuing to grow my development skills.
+                  Outside of code I'm a varsity swimmer, have logged 200+ hours tutoring on
+                  Upchieve, and run Vantage Point Learning — a STEM nonprofit I founded in 2023
+                  that now serves students across San Jose and Asia.
                 </p>
               </div>
             </div>
@@ -106,7 +161,10 @@ const About = () => {
             <h3 className="text-2xl font-semibold text-foreground">Technical Skills</h3>
             <div className="grid gap-6">
               {skills.map((skill, index) => (
-                <Card key={index} className="card-gradient border-border/50 hover:border-primary/30 transition-all duration-300">
+                <Card
+                  key={index}
+                  className="card-gradient border-border/50 hover:border-primary/30 transition-all duration-300"
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-3 mb-4">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -116,9 +174,9 @@ const About = () => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {skill.technologies.map((tech) => (
-                        <Badge 
-                          key={tech} 
-                          variant="secondary" 
+                        <Badge
+                          key={tech}
+                          variant="secondary"
                           className="bg-muted/50 text-muted-foreground border-0 hover:bg-primary/10 hover:text-primary transition-colors duration-200"
                         >
                           {tech}
