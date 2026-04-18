@@ -81,6 +81,18 @@ const ContactForm = () => {
       label: "Location",
       value: "San Jose, CA",
       href: null
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "linkedin.com/in/kaivalya-singh",
+      href: "https://www.linkedin.com/in/kaivalya-singh-732190374/"
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      value: "github.com/kaivalya-cyber",
+      href: "https://github.com/kaivalya-cyber"
     }
   ];
 
