@@ -229,43 +229,57 @@ const Projects = () => {
                       </div>
 
                       {/* Action Buttons */}
-                      {(project.githubUrl || project.liveUrl) && (
-                        <div className="flex flex-wrap gap-3 pt-2">
-                          {project.liveUrl && (
-                            <Button
-                              asChild
-                              size="sm"
-                              className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                      <div className="flex flex-wrap gap-3 pt-2">
+                        {project.liveUrl && (
+                          <Button
+                            asChild
+                            size="sm"
+                            className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                          >
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
-                              <a
-                                href={project.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <ExternalLink className="w-4 h-4 mr-2" />
-                                Live
-                              </a>
-                            </Button>
-                          )}
-                          {project.githubUrl && (
-                            <Button
-                              asChild
-                              variant="outline"
-                              size="sm"
-                              className="border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300"
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Live
+                            </a>
+                          </Button>
+                        )}
+                        {project.githubUrl && (
+                          <Button
+                            asChild
+                            variant="outline"
+                            size="sm"
+                            className="border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300"
+                          >
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
                             >
-                              <a
-                                href={project.githubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <Github className="w-4 h-4 mr-2" />
-                                Code
-                              </a>
-                            </Button>
-                          )}
-                        </div>
-                      )}
+                              <Github className="w-4 h-4 mr-2" />
+                              Code
+                            </a>
+                          </Button>
+                        )}
+                        <Button
+                          asChild
+                          variant="outline"
+                          size="sm"
+                          className="border-border hover:border-primary hover:bg-primary/10 text-foreground hover:text-primary transition-all duration-300"
+                          aria-label="LinkedIn profile"
+                        >
+                          <a
+                            href={LINKEDIN_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Linkedin className="w-4 h-4 mr-2" />
+                            LinkedIn
+                          </a>
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 ))}
