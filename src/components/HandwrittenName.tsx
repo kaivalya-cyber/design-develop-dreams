@@ -7,7 +7,7 @@ const HandwrittenName = ({ onComplete }: { onComplete?: () => void }) => {
     const t = setTimeout(() => {
       setDone(true);
       onComplete?.();
-    }, 4200);
+    }, 3800);
     return () => clearTimeout(t);
   }, [onComplete]);
 
@@ -51,7 +51,7 @@ const HandwrittenName = ({ onComplete }: { onComplete?: () => void }) => {
         .handwriting-text {
           stroke-dasharray: 2400;
           stroke-dashoffset: 2400;
-          animation: drawName 3s ease-in-out forwards, fillName 0.8s ease-in 3s forwards;
+          animation: drawName 2.5s ease-in-out forwards, fillName 0.6s ease-in 2.4s forwards;
         }
         @keyframes drawName {
           to { stroke-dashoffset: 0; }

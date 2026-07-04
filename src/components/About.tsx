@@ -163,7 +163,7 @@ const About = () => {
               {skills.map((skill, index) => (
                 <Card
                   key={index}
-                  className="card-gradient border-border/50 hover:border-primary/30 transition-all duration-300"
+                  className="glass-card hover:border-primary/30"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-3 mb-4">

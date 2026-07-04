@@ -202,7 +202,7 @@ const Projects = () => {
                 {category.projects.map((project) => (
                   <Card
                     key={project.title}
-                    className="group bg-card border-border/50 overflow-hidden hover:shadow-[var(--shadow-glow)] hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                    className="glass-card group overflow-hidden hover:-translate-y-2 animate-fade-in"
                   >
                     <CardHeader className="pb-3">
                       <CardTitle className="text-lg text-foreground group-hover:text-primary transition-colors duration-300">

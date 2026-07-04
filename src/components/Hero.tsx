@@ -19,13 +19,15 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 bg-background/80" />
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       
       {/* Enhanced Floating Elements with More Effects */}
-      <div className="absolute top-20 left-10 w-20 h-20 border border-primary/30 rounded-full animate-float hover:border-primary/60 transition-colors duration-300" />
-      <div className="absolute bottom-32 right-16 w-16 h-16 bg-primary/20 rounded-lg rotate-45 animate-float hover:bg-primary/40 transition-colors duration-300" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/3 right-20 w-12 h-12 border-2 border-primary-glow/40 rounded-full animate-float hover:border-primary-glow/80 transition-colors duration-300" style={{ animationDelay: '2s' }} />
-      <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-gradient-to-r from-primary to-primary-glow rounded-full animate-float opacity-60" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute top-40 right-1/3 w-6 h-6 border border-primary-glow/50 rounded-sm rotate-12 animate-float" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-20 left-[10%] w-32 h-32 border border-primary/20 rounded-full animate-float opacity-20 blur-sm" />
+      <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-primary/10 rounded-lg rotate-45 animate-float opacity-30 blur-sm" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/3 right-[10%] w-16 h-16 border-2 border-primary-glow/20 rounded-full animate-float opacity-20 blur-[2px]" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-20 left-[20%] w-12 h-12 bg-gradient-to-r from-primary to-primary-glow rounded-full animate-float opacity-40 blur-sm" style={{ animationDelay: '0.5s' }} />
       
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -71,7 +73,7 @@ const Hero = () => {
             .hero-handwriting {
               stroke-dasharray: 2400;
               stroke-dashoffset: 2400;
-              animation: heroDrawName 3s ease-in-out forwards, heroFillName 0.8s ease-in 2.8s forwards;
+              animation: heroDrawName 2.5s ease-in-out forwards, heroFillName 0.6s ease-in 2.3s forwards;
             }
             @keyframes heroDrawName {
               to { stroke-dashoffset: 0; }

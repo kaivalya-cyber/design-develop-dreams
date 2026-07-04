@@ -7,10 +7,10 @@
 @layer base {
   :root {
     /* Warm Fire Theme */
-    --background: 15 25% 8%;
-    --foreground: 45 90% 92%;
+    --background: 15 25% 7%;
+    --foreground: 45 90% 94%;
     
-    --card: 20 25% 11%;
+    --card: 20 25% 10%;
     --card-foreground: 45 90% 92%;
     
     --popover: 20 25% 11%;
@@ -115,7 +115,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased relative;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(0, 85%, 60%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(25, 80%, 55%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(45, 85%, 58%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(15, 90%, 65%, 0.05) 0px, transparent 50%);
   }
 }
 
@@ -127,6 +132,14 @@
   
   .card-gradient {
     background: var(--gradient-card);
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-soft transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply border-primary/30 bg-white/10 shadow-glow;
   }
   
   /* Professional Button Variants */
