@@ -6,6 +6,7 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import ContactForm from "@/components/ContactForm";
 import HandwrittenName from "@/components/HandwrittenName";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const [introDone, setIntroDone] = useState(() => {
@@ -26,6 +27,7 @@ const Index = () => {
       <Projects />
       <About />
       <ContactForm />
+      <Footer />
     </div>
   );
 };

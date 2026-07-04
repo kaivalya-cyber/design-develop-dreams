@@ -109,7 +109,7 @@ const ContactForm = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="card-gradient border-border/50 shadow-card">
+          <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-2xl gradient-text">Send a Message</CardTitle>
               <CardDescription>
@@ -188,7 +188,7 @@ const ContactForm = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <Card className="card-gradient border-border/50 shadow-card">
+            <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-xl gradient-text">Contact Information</CardTitle>
                 <CardDescription>
@@ -230,7 +230,7 @@ const ContactForm = () => {
             </Card>
 
             {/* Why Work With Me */}
-            <Card className="card-gradient border-border/50 shadow-card">
+            <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-xl gradient-text">Why Work With Me?</CardTitle>
               </CardHeader>

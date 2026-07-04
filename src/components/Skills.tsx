@@ -91,7 +91,7 @@ const Skills = () => {
           {expertise.map(({ icon: Icon, title, accent, body }) => (
             <div
               key={title}
-              className="glass-card p-8 group hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+              className="glass-card p-8 group hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-glow"
             >
               <div className="flex items-center mb-6">
                 <Icon className="w-8 h-8 text-primary mr-4" />
@@ -106,8 +106,9 @@ const Skills = () => {
 
           {/* Philosophy Quote */}
           <div className="md:col-span-2 lg:col-span-3 mt-8">
-            <div className="glass-card p-8 text-center border-l-4 border-primary bg-primary/5">
-              <Code className="w-12 h-12 text-primary mx-auto mb-4" />
+            <div className="glass-card p-8 text-center border-l-4 border-primary relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500" />
+              <Code className="w-12 h-12 text-primary mx-auto mb-4 relative z-10" />
               <blockquote className="text-xl md:text-2xl font-medium text-foreground mb-4 italic">
                 "Sometimes the best way to solve a problem is to help others."
               </blockquote>
