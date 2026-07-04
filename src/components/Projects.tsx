@@ -146,7 +146,6 @@ const categories: Category[] = [
           "STEM nonprofit platform with real-time volunteer feed, atomic claim logic, Google OAuth via PKCE.",
         technologies: ["React", "Supabase", "shadcn/ui"],
         githubUrl: "https://github.com/kaivalya-cyber/vantage-point-learning",
-        liveUrl: "https://vantage-point-learning.lovable.app",
       },
     ],
   },
